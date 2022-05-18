@@ -1,3 +1,5 @@
+import { Button } from '@mui/material';
+import { TextField } from '@mui/material';
 import React, {useState} from "react";
 import {v4 as uuidv4} from "uuid";
 
@@ -22,14 +24,15 @@ function TodoForm({addTodo}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
+        <form onSubmit={handleSubmit} className="todo-form">
+            <TextField
+                label="Task"
                 name="task"
                 type="text"
                 value={todo.task}
                 onChange={handleTaskInputChange}
             />
-            <button type="submit">Submit</button>
+            <Button type="submit">Submit</Button>
         </form>
     );
 }
